@@ -1,0 +1,19 @@
+/* 人员/部门选择器触发按钮：与文本输入框保持一致的 1px 细线边框、5px 圆角与柔和聚焦光环 */
+.sig-entity-picker-trigger {
+  border-radius: 5px !important;
+  border-width: 1px !important;
+  border-color: hsl(var(--input)) !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.sig-entity-picker-trigger:hover {
+  border-color: hsl(var(--input)) !important;
+  background-color: transparent !important;
+}
+
+.sig-entity-picker-trigger:focus-visible {
+  border-color: hsl(var(--primary)) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.18) !important;
+}

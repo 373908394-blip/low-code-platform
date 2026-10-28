@@ -1,0 +1,1 @@
+ALTER TABLE public.meta_forms ADD COLUMN app_type text NOT NULL DEFAULT 'form';

@@ -1,0 +1,456 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --radius: 5px;
+    --background: 216 24% 96%; /* #f2f4f7 */
+    --foreground: 0 21% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 21% 10%;
+    --popover: 45 100% 99%;
+    --popover-foreground: 0 21% 10%;
+    --primary: 234 64% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 234 64% 95%;
+    --secondary-foreground: 234 48% 38%;
+    --muted: 45 33% 96%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 222 47% 31%;
+    --accent-foreground: 45 100% 99%;
+    --destructive: 0 72% 45%;
+    --border: 45 12% 88%;
+    --card-border: 0 0% 100%;
+    --input: 45 12% 88%;
+    --ring: 234 64% 56%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --sidebar-background: 45 100% 99%;
+    --sidebar-foreground: 0 21% 10%;
+    --sidebar-primary: 234 64% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 31%;
+    --sidebar-accent-foreground: 45 100% 99%;
+    --sidebar-border: 45 12% 88%;
+    --sidebar-ring: 234 64% 56%;
+    --destructive-foreground: 45 100% 99%;
+    /* custom tokens | registered by miaoda-super-design */
+    --font-ui: "IBMPlexSans", "HarmonyOSSans", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --sig-running: 234 64% 56%;
+    --sig-passed: 222 47% 31%;
+    --sig-rejected: 0 72% 42%;
+    --sig-draft: 215 12% 60%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 234 85% 72%;
+    --primary-foreground: 234 48% 16%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --border: 217.2 32.6% 17.5%;
+    --card-border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 234 85% 72%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 234 85% 72%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 234 85% 72%;
+    --destructive-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ===== @font-face: IBMPlexSans + HarmonyOSSans（来源 home-1.html 设计稿） ===== */
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("https://resource-static.bj.bcebos.com/fonts-skill/IBMPlexSans_Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("https://resource-static.bj.bcebos.com/fonts-skill/IBMPlexSans_SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("https://resource-static.bj.bcebos.com/fonts-skill/IBMPlexSans_Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HarmonyOSSans";
+  src: url("https://resource-static.bj.bcebos.com/fonts-skill/HarmonyOSSans_Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HarmonyOSSans";
+  src: url("https://resource-static.bj.bcebos.com/fonts-skill/HarmonyOSSans_Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HarmonyOSSans";
+  src: url("https://resource-static.bj.bcebos.com/fonts-skill/HarmonyOSSans_Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HarmonyOSSans";
+  src: url("https://resource-static.bj.bcebos.com/fonts-skill/HarmonyOSSans_Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* ===== SIGNATURE-CSS（来自 home-1.html，瑞士数据白签名系统） ===== */
+body {
+  font-family: var(--font-ui);
+  font-synthesis: none;
+  line-break: strict;
+  background-color: #f2f4f7;
+}
+
+/* sig：等宽数字系统——KPI/表格/编号统一 tabular-nums，千分位右对齐 */
+.sig-num {
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+.sig-kpi {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 0.95;
+}
+
+/* sig：状态色点双编码——审批状态用色点+文字，不单靠颜色传达 */
+.sig-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 12px;
+  color: hsl(var(--muted-foreground));
+  white-space: nowrap;
+}
+.sig-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: hsl(var(--sig-draft));
+  flex: none;
+}
+.sig-status[data-status="running"]::before {
+  background: hsl(var(--sig-running));
+}
+.sig-status[data-status="passed"]::before {
+  background: hsl(var(--sig-passed));
+}
+.sig-status[data-status="rejected"]::before {
+  background: hsl(var(--sig-rejected));
+}
+
+/* sig：列表行操作列默认始终显示（不随悬浮揭示），保留行背景过渡 */
+.sig-table tbody tr {
+  transition: background-color 150ms ease;
+}
+
+/* sig：环形图描边色 */
+.sig-ring {
+  fill: none;
+  stroke-width: 14;
+}
+.sig-ring-track {
+  stroke: hsl(var(--muted));
+}
+.sig-ring-passed {
+  stroke: hsl(var(--sig-passed));
+}
+.sig-ring-running {
+  stroke: hsl(var(--sig-running));
+}
+.sig-ring-rejected {
+  stroke: hsl(var(--sig-rejected));
+}
+
+/* ===== Arco Design token 桥接：将设计系统变量映射到 Arco CSS 变量（light/dark 自动跟随） =====
+   注意：arco.css 在 body 上定义了 --primary-1~10 / --link-1~10（绑死 arcoblue），
+   body 上的定义会覆盖 :root 继承值，因此本块必须同时作用于 :root 与 body 才能生效 */
+:root,
+body {
+  /* 基础默认主题色为云际靛蓝 #4A58D4 (rgb: 74, 88, 212) */
+  --primary-1: 245, 246, 254;
+  --primary-2: 226, 230, 252;
+  --primary-3: 196, 202, 250;
+  --primary-4: 158, 167, 246;
+  --primary-5: 112, 127, 240;
+  --primary-6: 74, 88, 212;
+  --primary-7: 59, 71, 183;
+  --primary-8: 45, 55, 152;
+  --primary-9: 34, 41, 120;
+  --primary-10: 24, 30, 89;
+
+  /* 链接色与主色同步（Arco Link / 链接文字默认为 arcoblue，需一并覆盖） */
+  --link-1: 245, 246, 254;
+  --link-2: 226, 230, 252;
+  --link-3: 196, 202, 250;
+  --link-4: 158, 167, 246;
+  --link-5: 112, 127, 240;
+  --link-6: 74, 88, 212;
+  --link-7: 59, 71, 183;
+  --link-8: 45, 55, 152;
+  --link-9: 34, 41, 120;
+  --link-10: 24, 30, 89;
+
+  --color-primary-light-1: rgba(var(--primary-6), 0.1);
+  --color-primary-light-2: rgba(var(--primary-6), 0.2);
+  --color-primary-light-3: rgba(var(--primary-6), 0.35);
+  --color-primary-light-4: rgba(var(--primary-6), 0.5);
+  --color-link-light-1: rgba(var(--link-6), 0.1);
+  --color-link-light-2: rgba(var(--link-6), 0.2);
+  --color-link-light-3: rgba(var(--link-6), 0.35);
+  --color-link-light-4: rgba(var(--link-6), 0.5);
+
+  --color-primary-1: hsl(var(--primary) / 0.08);
+  --color-primary-2: hsl(var(--primary) / 0.16);
+  --color-primary-3: hsl(var(--primary) / 0.24);
+  --color-primary-4: hsl(var(--primary) / 0.32);
+  --color-primary-5: hsl(var(--primary) / 0.48);
+  --color-primary-6: hsl(var(--primary));
+  --color-primary-7: hsl(var(--primary) / 0.9);
+  --color-primary-8: hsl(var(--primary) / 0.8);
+  --color-primary-9: hsl(var(--primary) / 0.7);
+  --color-primary-10: hsl(var(--primary) / 0.6);
+  --color-bg-1: hsl(var(--background));
+  --color-bg-2: hsl(var(--card));
+  --color-bg-3: hsl(var(--muted));
+  --color-bg-4: hsl(var(--muted));
+  --color-bg-white: hsl(var(--card));
+  --color-text-1: hsl(var(--foreground));
+  --color-text-2: hsl(var(--muted-foreground));
+  --color-text-3: hsl(var(--muted-foreground));
+  --color-text-4: hsl(var(--muted-foreground) / 0.6);
+  --color-border-1: hsl(var(--border) / 0.6);
+  --color-border-2: hsl(var(--border));
+  --color-border-3: hsl(var(--border) / 0.8);
+  --color-fill-1: hsl(var(--muted) / 0.6);
+  --color-fill-2: hsl(var(--muted));
+  --color-fill-3: hsl(var(--muted) / 0.8);
+  --color-danger-6: hsl(var(--destructive));
+  --color-danger-5: hsl(var(--destructive) / 0.8);
+  --color-success-6: hsl(var(--chart-2));
+  --color-warning-6: hsl(var(--chart-1));
+  --color-link-6: hsl(var(--primary));
+  --radius-small: calc(var(--radius) - 0.125rem);
+  --radius-medium: var(--radius);
+  --radius-large: calc(var(--radius) + 0.125rem);
+  /* 平面材质：极淡阴影，卡片主要靠 1px 发丝线边框分层（tailwind shadow-card/hover 引用） */
+  --shadow-card: 0 1px 2px hsl(var(--foreground) / 0.04);
+  --shadow-hover: 0 2px 6px hsl(var(--foreground) / 0.06);
+}
+
+/* ===== 按钮与组件标准体系（四级按钮 / 32px 高度 / 5px 圆角 / 柔和聚焦光环） ===== */
+/* 1. 按钮形态由 button.tsx 组件类（cva）定义：主按钮实心主题色、次按钮 1px 发丝线边框、
+      文字按钮无边框、危险操作红色文字；此处仅兜底 Arco 遗留控件（如分页器）对齐新体系 */
+.arco-btn,
+.arco-pagination-item,
+.arco-pagination-item-active,
+.arco-pagination-next,
+.arco-pagination-previous {
+  border-radius: 5px !important;
+  box-shadow: none !important;
+}
+.arco-btn-primary {
+  border: 0 !important;
+}
+
+/* 2. 输入类组件：5px 圆角；默认与聚焦态边框线宽统一保持 1px，
+      聚焦时边框变色为主题色并叠加柔和光环（ring），不加粗边框 */
+input,
+textarea,
+.arco-input,
+.arco-textarea,
+.arco-input-wrapper,
+.arco-textarea-wrapper,
+.arco-select-view,
+.arco-picker {
+  border-radius: 5px !important;
+}
+
+input:not(.arco-input):not([class*='border-0']):focus,
+input:not(.arco-input):not([class*='border-0']):focus-visible,
+textarea:focus,
+textarea:focus-visible,
+.arco-input-wrapper:focus-within,
+.arco-input-wrapper-focus,
+.arco-textarea-wrapper:focus-within,
+.arco-textarea-wrapper-focus,
+.arco-select-view:focus-within,
+.arco-select-view-focus,
+.arco-picker:focus-within,
+.arco-picker-focused {
+  border-width: 1px !important;
+  border-color: hsl(var(--primary)) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.18) !important;
+}
+
+/* 3. 容器模块圆角规范：卡片、弹窗、列表表格等容器统一 5px 圆角；
+      提示 / 通知 / 数量气泡 / 徽标 / 开关等小组件保留原生圆角（rounded-md / rounded-sm 不强制） */
+.card,
+[class*='rounded-xl'],
+[class*='rounded-lg'] {
+  border-radius: 5px !important;
+}
+
+/* 原生按钮：统一 5px 圆角（圆形按钮 / 圆形头像 rounded-full 除外；
+      开关 Switch 为 rounded-full 圆形胶囊，保留原生圆角） */
+button[class*='rounded']:not([class*='rounded-full']) {
+  border-radius: 5px !important;
+}
+
+/* Arco 弹层面板与模态框：与全站容器统一 5px 圆角 */
+.arco-trigger-popup,
+.arco-picker-container,
+.arco-select-popup,
+.arco-modal,
+.arco-drawer {
+  border-radius: 5px !important;
+}
+
+/* 4. 卡片 / 弹窗 / 列表表格等卡片类模块：1px 边框线统一白色
+      （深色模式自动回退默认边框色；带主色边框或悬停变色的交互元素不受影响） */
+.bg-card[class*='border-border']:not([class*='border-primary']):not([class*='hover:border']),
+.bg-background[class*='border-border']:not([class*='border-primary']):not([class*='hover:border']) {
+  border-color: hsl(var(--card-border)) !important;
+}
+
+.arco-input-wrapper,
+.arco-select-view,
+.arco-textarea-wrapper,
+.arco-picker {
+  border-radius: 5px !important;
+  border-width: 1px !important;
+  border-color: hsl(var(--input)) !important;
+  background-color: transparent !important;
+}
+
+.arco-input-wrapper:hover,
+.arco-select-view:hover,
+.arco-textarea-wrapper:hover,
+.arco-picker:hover {
+  border-color: hsl(var(--input)) !important;
+}
+
+.arco-input-wrapper-focus,
+.arco-select-view-focus,
+.arco-textarea-wrapper-focus,
+.arco-picker-focused {
+  border-width: 1px !important;
+  border-color: hsl(var(--primary)) !important;
+  background-color: transparent !important;
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.18) !important;
+}
+
+/* 弹窗内的人员/部门选择器触发按钮：强制 1px 细线边框与输入框对齐 */
+[role="dialog"] button[role="combobox"],
+[data-state="open"] button[role="combobox"] {
+  border-radius: 5px !important;
+  border-width: 1px !important;
+}
+
+/* Arco 选择器/日期选择器：默认态边框跟随 --input，聚焦态跟随 --primary，线宽始终 1px */
+.arco-select:not(.arco-select-no-border) .arco-select-view,
+.arco-picker {
+  border-width: 1px !important;
+  border-color: hsl(var(--input)) !important;
+  background-color: transparent !important;
+}
+
+.arco-select:not(.arco-select-no-border):hover .arco-select-view,
+.arco-picker:hover {
+  border-color: hsl(var(--input)) !important;
+  background-color: transparent !important;
+}
+
+.arco-select.arco-select-focused:not(.arco-select-no-border) .arco-select-view,
+.arco-picker-focused,
+.arco-picker:focus-within {
+  border-width: 1px !important;
+  border-color: hsl(var(--primary)) !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 日期/时间选择器：仅弹层选择，输入框禁键入、无选中光标与选区效果；
+   内层 input 不显示自身边框与背景，避免与外层 .arco-picker 容器形成双边框 */
+.arco-picker .arco-picker-input input,
+.arco-picker input {
+  caret-color: transparent;
+  user-select: none;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.arco-picker .arco-picker-input input:focus,
+.arco-picker .arco-picker-input input:focus-visible,
+.arco-picker input:focus,
+.arco-picker input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+/* 筛选场景：日期范围选择器块级占位（标签在上、控件在下，与 Select/Input 一致）；
+   arco 根类为 inline-flex，在非 flex 容器中会与标签同行排列 */
+.biz-date-filter {
+  display: flex !important;
+}
+
+/* Arco 下拉选择/人员选择/部门树 hover 项：统一浅灰背景+深色文字，保证可读性 */
+.arco-select-popup .arco-select-option-hover,
+.arco-select-popup .arco-select-option:hover {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+.arco-tree-node-title:hover,
+.arco-tree-node-title-block:hover .arco-tree-node-title {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--foreground)) !important;
+}

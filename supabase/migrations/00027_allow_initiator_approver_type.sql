@@ -1,0 +1,1 @@
+ALTER TABLE public.biz_approval DROP CONSTRAINT biz_approval_approver_type_check, ADD CONSTRAINT biz_approval_approver_type_check CHECK (approver_type = ANY (ARRAY['user'::text, 'role'::text, 'dept_leader'::text, 'initiator'::text, 'initiator_choice'::text, 'multi_level_leader'::text]));

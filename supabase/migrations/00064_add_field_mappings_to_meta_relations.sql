@@ -1,0 +1,2 @@
+ALTER TABLE public.meta_relations ADD COLUMN IF NOT EXISTS field_mappings jsonb NOT NULL DEFAULT '[]'::jsonb;
+COMMENT ON COLUMN public.meta_relations.field_mappings IS '主表字段赋值映射：关联后取首条关联记录字段值写入主表字段（[{mainKey,targetKey}]），被赋值字段编辑页只读';

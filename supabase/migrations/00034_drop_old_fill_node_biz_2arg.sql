@@ -1,0 +1,1 @@
+DROP FUNCTION IF EXISTS public.fill_node_biz(uuid, jsonb);

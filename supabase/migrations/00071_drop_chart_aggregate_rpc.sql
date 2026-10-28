@@ -1,0 +1,2 @@
+-- 清理上一轮引入的 chart_aggregate RPC：存在多个缺陷（record 循环变量导致条件调用报 42883、参数错位、无法还原前端字段解析语义），前端已改为共享拉取层（显式列 + 并发限流 + 去重），不再需要该函数
+DROP FUNCTION IF EXISTS public.chart_aggregate(uuid, text, text, text, jsonb, text, uuid[], integer);
