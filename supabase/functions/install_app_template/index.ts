@@ -6,8 +6,14 @@
 // 卸载逻辑：仅删除组件菜单树与待办菜单，表单与业务数据全部保留。仅超管可用。
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+};
+
 const json = (body: unknown, status = 200) =>
-  new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
+  new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
 
 /** 蓝本租户（沐沐演示科技，demo@yunshu.cn） */
 const BLUEPRINT_TENANT = '00000000-0000-0000-0000-000000000001';
@@ -401,6 +407,8 @@ async function uninstall(service: Sb, tenantId: string, comp: ComponentDef) {
 }
 
 Deno.serve(async (req) => {
+  // CORS 预检：必须最先返回，浏览器才会放行真正的 POST
+  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: corsHeaders });
   if (req.method !== 'POST') return json({ error: '仅支持 POST' }, 405);
 
   const authHeader = req.headers.get('Authorization') ?? '';
